@@ -4,7 +4,7 @@ metadata:
   name: nginxtest
   namespace: nginxtest
 spec:
-  releaseName: nginxstest
+  releaseName: nginxtest
   chart:
     spec:
       chart: nginx
