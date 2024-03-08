@@ -1,8 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: podinfo
-  namespace: podinfo
+  name: nginx
+  namespace: nginxtest
 spec:
   interval: 5m
-  url: https://stefanprodan.github.io/podinfo
+  url: oci://registry-1.docker.io/bitnamicharts/nginx

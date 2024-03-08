@@ -1,27 +1,27 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
-  name: podinfo
-  namespace: podinfo
+  name: nginxtest
+  namespace: nginxtest
 spec:
-  releaseName: podinfo
+  releaseName: nginxstest
   chart:
     spec:
-      chart: podinfo
+      chart: nginx
       sourceRef:
         kind: HelmRepository
-        name: podinfo
+        name: nginx
   interval: 50m
   install:
     remediation:
       retries: 3
   # Default values
   # https://github.com/stefanprodan/podinfo/blob/master/charts/podinfo/values.yaml
-  values:
-    redis:
-      enabled: true
-      repository: public.ecr.aws/docker/library/redis
-      tag: 7.0.6
-    ingress:
-      enabled: true
-      className: nginx
+  # values:
+  #   redis:
+  #     enabled: true
+  #     repository: public.ecr.aws/docker/library/redis
+  #     tag: 7.0.6
+  #   ingress:
+  #     enabled: true
+  #     className: nginx
